@@ -1,38 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .App {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+fieldset {
+  position: relative;
+  border: 1px solid #800080;
+  padding-top: 1.5em;
+}
+fieldset legend {
+  border: 1px solid #800080;
+  position: absolute;
+  top: -1em;
+  left: 3em;
+  padding: 6px 18px;
+  background-color: white;
+}
+.App h1 {
+  border-bottom: 5px solid #800080;
+  border-top: 5px solid #800080;
+  color: #800080;
+  display: block;
+  width: 50%;
+  margin: 50px auto 16px;
+  height: 65px;
+  line-height: 48px;
+  font-size: 36px;
+  padding: 0 18px;
+  border-radius: 8px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .tasks-list {
+  color: purple;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .tasks-list li {
+  background-color: #80008028;
+  list-style: "🤩";
+  padding: 5px 1em;
+  list-style-position: inside;
+  margin: 3px auto;
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.App .tasks-list li h4 {
+  display: inline-block;
+}
+.App .tasks-list li.done {
+  list-style: "✅";
+  background-color: green;
+  color: #fff;
+  list-style-position: inside;
+}
+.App .input-form {
+  padding: 1em;
+}
+.App .input-form input {
+  border: 1px solid #bbb;
+  padding: 5px 1em;
+  width: 40%;
+  font: 700 14px/1.5 Cairo;
+  color: purple;
+  border-radius: 0;
+  outline: 0;
+}
+.App .input-form input:focus {
+  border-color: purple;
+}
+.App .input-form button {
+  border: 1px solid #bbb;
+  padding: 5px 1em;
+  width: 20%;
+  font: bold 14px/1.5 Cairo;
+  color: purple;
+  transition: all 0.3s ease;
+}
+.App .input-form button:hover {
+  border: 1px solid purple;
+  background-color: purple;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App .input-form input:first-child,
+.App .input-form button:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+.App .input-form button:last-child,
+.App .input-form input:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App div.buttons {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+}
+
+.App div.buttons button {
+  padding: 0.2em 0.5em;
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  color: #800080;
+  cursor: pointer;
+}
+
+.tasks-details {
+  border-top: 1px solid #800080;
+  border-bottom: 1px solid;
+  color: #800080;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.tasks-details span {
+  display: inline-block;
+  border-right: 1px solid #800080;
+  width: 33%;
+  text-align: center;
+  padding: 8px;
+}
+
+.tasks-details span:last-child {
+  border: 0;
 }
