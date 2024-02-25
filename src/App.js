@@ -45,10 +45,12 @@ function App() {
 
   const itemDelete = (index) => {
     const tasks = [...x];
+    if (tasks[index].finished === false) {
+      setRemaining(remaining - 1);
+    }
     tasks.splice(index, 1);
     setx(tasks);
     setallTasks(allTasks - 1);
-    setRemaining(remaining - 1);
   };
 
   return (
